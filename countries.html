@@ -1,62 +1,256 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+  <link rel="icon" href="/favicon.png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>국가 안내</title>
+  <title>국가 안내 | 세이프코리아</title>
+  <meta name="description" content="투자시민권 국가별 핵심 정보를 안내합니다." />
 
-  <!-- 🔥 여기 중요: index.html의 <style> 통째로 복붙 -->
+  <style>
+    :root {
+      --gold-line: rgba(212,175,55,0.35);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
+      background: #000000;
+      color: #ffffff;
+      line-height: 1.6;
+      word-break: keep-all;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .header {
+      position: relative;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(10, 10, 10, 0.88);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 20px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 22px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav a:hover { color: #fff; }
+
+    .section {
+      padding: 88px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .section-text {
+      margin-top: 20px;
+      max-width: 860px;
+      color: rgba(255,255,255,0.7);
+      font-size: clamp(15px, 1.8vw, 17px);
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 38px;
+    }
+
+    .card {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.06),
+        rgba(255,255,255,0.03)
+      );
+      border-radius: 28px;
+      padding: 24px;
+      transition: all 0.25s ease;
+      min-width: 0;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212,175,55,0.25);
+      background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.08),
+        rgba(255,255,255,0.04)
+      );
+    }
+
+    .card h3 {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
+    .card p {
+      margin: 14px 0 0;
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+    }
+
+    .mini-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 16px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #e9cf85, #caa64b);
+      color: #111111;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(202,166,75,0.22);
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .mini-btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .country-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .logo img {
+      width: clamp(140px, 16vw, 220px);
+      height: auto;
+    }
+
+    @media (max-width: 900px) {
+      .cards-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        gap: 12px 14px;
+        font-size: 13px;
+      }
+
+      .logo img {
+        height: 56px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(1120px, calc(100% - 28px));
+      }
+
+      .section {
+        padding: 56px 0;
+      }
+
+      .card {
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      .logo img {
+        height: 48px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <img src="/logo.png" alt="SAFEKOREA" />
+      </a>
+      <nav class="nav">
+        <a href="/">홈</a>
+        <a href="/countries.html">국가안내</a>
+        <a href="/contact-qr.html">문의</a>
+      </nav>
+    </div>
+  </header>
 
-<!-- 🔥 헤더 (index랑 동일하게 유지) -->
-<header class="header">
-  <div class="container header-inner">
-    <a href="/" class="logo">
-      <img src="/logo.png" alt="SAFEKOREA" />
-    </a>
-    <nav class="nav">
-      <a href="/about.html">소개</a>
-      <a href="/countries.html">국가안내</a>
-      <a href="/contact-qr.html">문의</a>
-    </nav>
-  </div>
-</header>
+  <section id="countries" class="section">
+    <div class="container">
+      <div class="eyebrow">Countries</div>
+      <h2>주요 국가 안내</h2>
+      <p class="section-text">
+        국가별 핵심 특징을 먼저 살펴보고, 본인 목적에 맞는 방향을 정할 수 있습니다.
+      </p>
 
-<!-- 🔥 이 부분이 핵심 (그대로 복사한 섹션) -->
-<section id="countries" class="section">
-  <div class="container">
-    <div class="eyebrow">Countries</div>
-    <h2>주요 국가 안내</h2>
-    <p class="section-text">
-      국가별 핵심 특징을 먼저 살펴보고, 본인 목적에 맞는 방향을 정할 수 있습니다.
-    </p>
+      <div class="cards-3">
+        <div class="card">
+          <img src="/tk.png" alt="터키" class="country-image" />
+          <h3>터키</h3>
+          <p>오랜 운영 이력을 가진 대표적인 투자시민권 프로그램</p>
+          <a class="mini-btn" href="/contact-qr.html">문의하기</a>
+        </div>
 
-    <div class="cards-3">
-      <div class="card">
-        <img src="/tk.png" alt="터키" class="country-image" />
-        <h3>터키</h3>
-        <p>오랜 운영 이력을 가진 대표적인 투자시민권 프로그램</p>
-        <a class="mini-btn" href="/contact-qr.html">문의하기</a>
-      </div>
+        <div class="card">
+          <img src="/vanuatu.jpg" alt="바누아투" class="country-image" />
+          <h3>바누아투</h3>
+          <p>비교적 합리적인 진입 비용과 간결한 심사 구조</p>
+          <a class="mini-btn" href="/contact-qr.html">문의하기</a>
+        </div>
 
-      <div class="card">
-        <img src="/vanuatu.jpg" alt="바누아투" class="country-image" />
-        <h3>바누아투</h3>
-        <p>비교적 합리적인 진입 비용과 간결한 심사 구조</p>
-        <a class="mini-btn" href="/contact-qr.html">문의하기</a>
-      </div>
-
-      <div class="card">
-        <img src="/grenada.jpg" alt="그레나다" class="country-image" />
-        <h3>그레나다</h3>
-        <p>특정 국가와의 연계 활용도가 높은 프로그램으로 주목</p>
-        <a class="mini-btn" href="/contact-qr.html">문의하기</a>
+        <div class="card">
+          <img src="/grenada.jpg" alt="그레나다" class="country-image" />
+          <h3>그레나다</h3>
+          <p>특정 국가와의 연계 활용도가 높은 프로그램으로 주목</p>
+          <a class="mini-btn" href="/contact-qr.html">문의하기</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 </body>
 </html>

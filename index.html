@@ -52,12 +52,12 @@
 
   /* 기존 섹션/카드들이 영상 위에서 잘 보이도록 살짝 보강 */
   .header {
-    position: relative;
-    z-index: 100;
-    backdrop-filter: blur(10px);
-    background: rgba(10, 10, 10, 0.72);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
+  position: relative;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: transparent; /* 👈 이것만 변경 */
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
 
   .section {
     position: relative;

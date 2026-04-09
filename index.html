@@ -393,7 +393,7 @@
     .nav {
   display: flex;
   gap: 22px;
-  margin-left: auto; /* 👈 확실하게 오른쪽으로 밀기 */
+  
 }
 
     .logo img {
@@ -455,14 +455,15 @@
     }
 
     .header-inner {
-      padding: 12px 0;
-      gap: 14px;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
     .nav {
-      gap: 10px 12px;
-      font-size: 12px;
-    }
+  display: flex;
+  gap: 22px;
+}
 
     .btn {
       padding: 13px 16px;

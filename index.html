@@ -7,6 +7,19 @@
   <title>세이프코리아</title>
   <meta name="description" content="투자시민권(CBI) 국가별 정보와 상담 안내를 위한 페이지" />
   <style>
+    .video-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.58) 45%,
+      rgba(0, 0, 0, 0.72) 100%
+    );
+}
     :root {
       --gold-line: rgba(212,175,55,0.35);
     }
@@ -451,6 +464,12 @@
   </style>
 </head>
 <body>
+  <div class="video-bg" aria-hidden="true">
+  <video autoplay muted loop playsinline preload="metadata">
+    <source src="/bg-video.mp4" type="video/mp4" />
+  </video>
+</div>
+<div class="video-overlay" aria-hidden="true"></div>
   <header class="header">
     <div class="container header-inner">
       <a href="/" class="logo">

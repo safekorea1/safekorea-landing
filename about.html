@@ -21,11 +21,11 @@
       padding: 60px 0;
     }
 
-    .eyebrow {
-      font-size: 12px;
-      letter-spacing: 0.2em;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 12px;
+    .logo img {
+      height: 120px;
+      width: auto;
+      display: block;
+      filter: brightness(1.05);
     }
 
     h1 {
@@ -48,9 +48,15 @@
       background: rgba(255,255,255,0.04);
     }
 
+    .btn-group {
+      display: flex;
+      gap: 14px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
     .btn {
       display: inline-block;
-      margin-top: 40px;
       padding: 14px 22px;
       border-radius: 18px;
       font-weight: 700;
@@ -58,35 +64,103 @@
       color: #111;
       text-decoration: none;
     }
-    .btn-group {
-  display: flex;
-  gap: 14px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
-    .logo img {
-  height: 120px;
-  width: auto;
-  display: block;
-  filter: brightness(1.05);
-}
+
+    /* 카드형 버튼 섹션 */
+    .service-grid {
+      margin-top: 42px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      display: block;
+      text-decoration: none;
+      padding: 26px 22px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #f4f5f7 0%, #eceef1 100%);
+      box-shadow:
+        0 18px 40px rgba(0,0,0,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.9);
+      border: 1px solid rgba(255,255,255,0.65);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow:
+        0 24px 50px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.95);
+    }
+
+    .service-title {
+      margin: 0 0 16px;
+      font-size: 18px;
+      line-height: 1.25;
+      font-weight: 800;
+      color: #1f8ff0;
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+    }
+
+    .service-desc {
+      margin: 0;
+      padding-left: 16px;
+      color: #5e636b;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .service-desc li {
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 980px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(100%, calc(100% - 24px));
+        padding: 32px 0 50px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .text {
+        font-size: 15px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .service-card {
+        padding: 22px 18px;
+      }
+
+      .service-title {
+        font-size: 17px;
+      }
+    }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-
     <a href="/" class="logo">
-  <img src="/logo.png" alt="SAFEKOREA" />
-</a>
-    <h1>불법체류 및 적색수배 관련
-상담 및 대응 사례 기반 안내 업체,
-세이프코리아</h1>
+      <img src="/logo.png" alt="SAFEKOREA" />
+    </a>
+
+    <h1>불법체류 및 적색수배 관련 상담 및 대응 사례 기반 안내 업체, 세이프코리아</h1>
 
     <div class="text">
-      해외각국 내 체류 문제,
-세이프코리아가
-절차를 안내해드립니다
+      해외각국 내 체류 문제, 세이프코리아가 절차를 안내해드립니다
     </div>
 
     <div class="box">
@@ -101,11 +175,53 @@
       복잡한 정보를 단순히 나열하는 것이 아니라,
       실제 의사결정에 필요한 핵심 기준만 정리하여 제공합니다.
     </div>
+
     <div class="btn-group">
       <a href="/contact-qr.html" class="btn">상담 문의하기</a>
-      
-  
-</div>
+    </div>
 
+    <!-- 추가 카드형 버튼 영역 -->
+    <section class="service-grid">
+      <a href="#" class="service-card">
+        <h3 class="service-title">수배 확인 및 대응 안내</h3>
+        <ul class="service-desc">
+          <li>문구는 자유롭게 수정</li>
+          <li>문구는 자유롭게 수정</li>
+          <li>문구는 자유롭게 수정</li>
+          <li>문구는 자유롭게 수정</li>
+        </ul>
+      </a>
+
+      <a href="#" class="service-card">
+        <h3 class="service-title">비자 만료·체류 초과</h3>
+        <ul class="service-desc">
+          <li>문구는 자유롭게 수정</li>
+          <li>문구는 자유롭게 수정</li>
+          <li>문구는 자유롭게 수정</li>
+          <li>문구는 자유롭게 수정</li>
+        </ul>
+      </a>
+
+      <a href="#" class="service-card">
+        <h3 class="service-title">부동산·자산 처리</h3>
+        <ul class="service-desc">
+          <li>문구는 자유롭게 수정</li>
+          <li>문구는 자유롭게 수정</li>
+          <li>문구는 자유롭게 수정</li>
+          <li>문구는 자유롭게 수정</li>
+        </ul>
+      </a>
+
+      <a href="#" class="service-card">
+        <h3 class="service-title">시민권 및 비자 컨설팅</h3>
+        <ul class="service-desc">
+          <li>문구는 자유롭게 수정</li>
+          <li>문구는 자유롭게 수정</li>
+          <li>문구는 자유롭게 수정</li>
+          <li>문구는 자유롭게 수정</li>
+        </ul>
+      </a>
+    </section>
+  </div>
 </body>
 </html>

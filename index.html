@@ -9,12 +9,15 @@
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
-      background: #0a0a0a;
-      color: #ffffff;
-      line-height: 1.6;
-    }
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(212,175,55,0.10), transparent 24%),
+    radial-gradient(circle at top right, rgba(255,255,255,0.04), transparent 20%),
+    linear-gradient(180deg, #070707 0%, #040404 100%);
+  color: #ffffff;
+  line-height: 1.6;
+}
     a { text-decoration: none; color: inherit; }
     .container {
       width: min(1120px, calc(100% - 40px));
@@ -101,23 +104,29 @@
       transition: 0.2s ease;
     }
     .btn-primary {
-      background: #ffffff;
+      background: linear-gradient(135deg, #f7e3a3, #d4af37);
       color: #111111;
+      box-shadow: 0 10px 30px rgba(212,175,55,0.22);
     }
-    .btn-primary:hover { opacity: 0.9; }
+    .btn-primary:hover {
+      opacity: 0.94;
+      transform: translateY(-1px);
+    }
     .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.16);
-      color: #ffffff;
-      background: transparent;
+      border: 1px solid rgba(212,175,55,0.35);
+      color: #f3dfaa;
+      background: rgba(212,175,55,0.05);
     }
-    .btn-secondary:hover { background: rgba(255,255,255,0.05); }
+    .btn-secondary:hover { background: rgba(212,175,55,0.10); }
     .panel {
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.04);
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
-    }
+  border: 1px solid rgba(212,175,55,0.18);
+  background:
+    radial-gradient(circle at top left, rgba(212,175,55,0.14), rgba(255,255,255,0.03)),
+    rgba(255,255,255,0.03);
+  border-radius: 28px;
+  padding: 30px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.32);
+}
     .panel-title {
       color: rgba(255,255,255,0.58);
       font-size: 13px;
@@ -128,13 +137,13 @@
       gap: 12px;
     }
     .check-item {
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(0,0,0,0.18);
-      border-radius: 18px;
-      padding: 15px 16px;
-      color: rgba(255,255,255,0.86);
-      font-size: 14px;
-    }
+  border: 1px solid rgba(212,175,55,0.12);
+  background: rgba(0,0,0,0.20);
+  border-radius: 18px;
+  padding: 15px 16px;
+  color: rgba(255,255,255,0.92);
+  font-size: 14px;
+}
     .eyebrow {
       font-size: 12px;
       text-transform: uppercase;
@@ -161,24 +170,33 @@
       margin-top: 38px;
     }
     .card {
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.04);
-      border-radius: 28px;
-      padding: 24px;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
+  border: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.06),
+    rgba(255,255,255,0.03)
+  );
+  border-radius: 28px;
+  padding: 24px;
+  transition: all 0.25s ease;
+}
     .card:hover {
-      transform: translateY(-4px);
-      background: rgba(255,255,255,0.06);
-    }
+  transform: translateY(-6px);
+  border-color: rgba(212,175,55,0.25);
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.04)
+  );
+}
     .card-kicker {
       font-size: 12px;
       color: rgba(255,255,255,0.45);
     }
     .card h3 {
-      margin: 12px 0 0;
-      font-size: 26px;
-    }
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
     .card p {
       margin: 14px 0 0;
       color: rgba(255,255,255,0.7);
@@ -248,8 +266,8 @@
   <header class="header">
     <div class="container header-inner">
       <div>
-        <div class="brand-title">🏛 CBI 정보채널</div>
-        <div class="brand-sub">Global Citizenship by Investment Guide</div>
+        <div class="brand-title"> 글로벌 CBI 정보채널</div>
+        <div class="brand-sub">Private Advisory · Global Citizenship Intelligence</div>
       </div>
       <nav class="nav">
         <a href="#about">소개</a>
@@ -267,12 +285,13 @@
         <div class="badge">Trusted CBI Information & Private Consultation</div>
         <h1>
           글로벌 투자시민권,<br>
-          전략적으로 비교하고,<br>
-          신중하게 결정하세요.
+          더 신중하고 전략적으로<br>
+          선택하세요.
         </h1>
         <p class="hero-text">
-          국가별 투자시민권(CBI) 제도, 예상 비용, 진행 구조, 가족 포함 여부까지 핵심 정보만 정리해 드립니다.
-          복잡한 선택일수록 정확한 비교와 신뢰할 수 있는 안내가 중요합니다.
+          국가별 투자시민권 제도, 예상 비용, 진행 구조, 가족 포함 범위까지
+          핵심 기준만 선별해 안내합니다. 중요한 선택일수록 더 정교한 비교와
+          신뢰할 수 있는 정보가 필요합니다.
         </p>
         <div class="button-row">
           <a class="btn btn-primary" href="/contact-qr.html">상담 문의하기</a>
@@ -283,12 +302,11 @@
       <div class="panel">
         <div class="panel-title">핵심 체크 포인트</div>
         <div class="check-list">
-          <div class="check-item">국가별 투자금 및 부대비용 비교</div>
-          <div class="check-item">가족 포함 범위와 신청 조건 정리</div>
-          <div class="check-item">심사 기간 및 진행 절차 안내</div>
-          <div class="check-item">부동산형 / 기부형 구조 비교</div>
-          <div class="check-item">상담 채널 연동 및 맞춤형 안내</div>
-        </div>
+  <div class="check-item">Global CBI Strategy</div>
+  <div class="check-item">국가별 조건 및 투자 구조 비교</div>
+  <div class="check-item">가족 포함 범위 및 심사 기준 검토</div>
+  <div class="check-item">목적에 맞는 맞춤형 진행 방향 안내</div>
+</div>
       </div>
     </div>
   </section>
@@ -392,7 +410,7 @@
   </section>
 
   <footer class="footer">
-    <div class="container">© 2026 CBI 정보채널. All rights reserved.</div>
+    <div class="container">© 2026 글로벌 CBI 정보채널. All rights reserved.</div>
   </footer>
 </body>
 </html>

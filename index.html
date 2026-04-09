@@ -7,27 +7,43 @@
   <title>세이프코리아</title>
   <meta name="description" content="투자시민권(CBI) 국가별 정보와 상담 안내를 위한 페이지" />
   <style>
+    :root {
+      --gold-line: rgba(212,175,55,0.35);
+    }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
-  background: #000000;
-  color: #ffffff;
-  line-height: 1.6;
-}
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
+      background: #000000;
+      color: #ffffff;
+      line-height: 1.6;
+      word-break: keep-all;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
     a { text-decoration: none; color: inherit; }
+
     .container {
       width: min(1120px, calc(100% - 40px));
       margin: 0 auto;
     }
+
     .header {
-  position: relative;
-  z-index: 100;
-  backdrop-filter: blur(10px);
-  background: rgba(10, 10, 10, 0.88);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
+      position: relative;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(10, 10, 10, 0.88);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
     .header-inner {
       display: flex;
       align-items: center;
@@ -35,62 +51,74 @@
       padding: 16px 0;
       gap: 20px;
     }
+
     .brand-title {
       font-size: 18px;
       font-weight: 700;
       letter-spacing: 0.02em;
     }
+
     .brand-sub {
       font-size: 12px;
       color: rgba(255,255,255,0.55);
       margin-top: 2px;
     }
+
     .nav {
       display: flex;
       gap: 22px;
       font-size: 14px;
       color: rgba(255,255,255,0.8);
       flex-wrap: wrap;
+      align-items: center;
     }
+
     .nav a:hover { color: #fff; }
+
     .section {
       padding: 88px 0;
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
+
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
       gap: 40px;
       align-items: center;
     }
+
     .badge {
-  display: inline-block;
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.10);
-  color: rgba(255,255,255,0.72);
-  font-size: 12px;
-  margin-bottom: 18px;
-  background: #0a0a0a;
-}
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.72);
+      font-size: 12px;
+      margin-bottom: 18px;
+      background: #0a0a0a;
+    }
+
     h1 {
       margin: 0;
-      font-size: 56px;
+      font-size: clamp(34px, 6vw, 56px);
       line-height: 1.15;
       letter-spacing: -0.03em;
     }
+
     .hero-text {
       margin-top: 22px;
       max-width: 660px;
       color: rgba(255,255,255,0.72);
-      font-size: 18px;
+      font-size: clamp(15px, 2vw, 18px);
     }
+
     .button-row {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
       margin-top: 30px;
     }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -100,54 +128,66 @@
       font-weight: 700;
       font-size: 14px;
       transition: 0.2s ease;
+      text-align: center;
+      min-height: 52px;
     }
+
     .btn-primary {
-  background: linear-gradient(135deg, #e9cf85, #caa64b);
-  color: #111111;
-  box-shadow: 0 10px 30px rgba(202,166,75,0.25);
-}
+      background: linear-gradient(135deg, #e9cf85, #caa64b);
+      color: #111111;
+      box-shadow: 0 10px 30px rgba(202,166,75,0.25);
+    }
+
     .btn-primary:hover {
-  opacity: 0.94;
-  transform: translateY(-1px);
-}
+      opacity: 0.94;
+      transform: translateY(-1px);
+    }
+
     .btn-secondary {
-  border: 1px solid rgba(212,175,55,0.35);
-  background: transparent; /* 핵심 */
-  color: #ffffff;
-  transition: all 0.2s ease;
-}
+      border: 1px solid rgba(212,175,55,0.35);
+      background: transparent;
+      color: #ffffff;
+      transition: all 0.2s ease;
+    }
+
     .btn-secondary:hover {
-  border-color: rgba(212,175,55,0.7);
-  background: rgba(212,175,55,0.08); /* hover에서만 살짝 */
-}
-    
+      border-color: rgba(212,175,55,0.7);
+      background: rgba(212,175,55,0.08);
+    }
+
     .panel {
-  border: 1px solid var(--gold-line);
-  background: #0a0a0a;
-  border-radius: 28px;
-  padding: 30px;
-  box-shadow: 0 18px 50px rgba(0,0,0,0.32);
-}
+      border: 1px solid var(--gold-line);
+      background: #0a0a0a;
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.32);
+      min-width: 0;
+    }
+
     .panel-title {
       color: rgba(255,255,255,0.58);
       font-size: 13px;
       margin-bottom: 16px;
     }
+
     .check-list {
       display: grid;
       gap: 12px;
     }
+
     .check-item {
-  border: 1px solid rgba(212,175,55,0.35); /* 금색 라인 */
-  background: #0a0a0a; /* panel이랑 동일하게 */
-  border-radius: 18px;
-  padding: 15px 16px;
-  transition: all 0.2s ease;
-}
+      border: 1px solid rgba(212,175,55,0.35);
+      background: #0a0a0a;
+      border-radius: 18px;
+      padding: 15px 16px;
+      transition: all 0.2s ease;
+    }
+
     .check-item:hover {
-  border-color: rgba(212,175,55,0.7);
-  background: #0a0a0a; /* 그대로 유지 (색 안 바뀜) */
-}
+      border-color: rgba(212,175,55,0.7);
+      background: #0a0a0a;
+    }
+
     .eyebrow {
       font-size: 12px;
       text-transform: uppercase;
@@ -155,146 +195,269 @@
       color: rgba(255,255,255,0.5);
       margin-bottom: 12px;
     }
+
     h2 {
       margin: 0;
-      font-size: 40px;
+      font-size: clamp(28px, 4vw, 40px);
       line-height: 1.2;
       letter-spacing: -0.02em;
     }
+
     .section-text {
       margin-top: 20px;
       max-width: 860px;
       color: rgba(255,255,255,0.7);
-      font-size: 17px;
+      font-size: clamp(15px, 1.8vw, 17px);
     }
+
     .cards-3 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
       margin-top: 38px;
     }
+
     .card {
-  border: 1px solid rgba(255,255,255,0.08);
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,0.06),
-    rgba(255,255,255,0.03)
-  );
-  border-radius: 28px;
-  padding: 24px;
-  transition: all 0.25s ease;
-}
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.06),
+        rgba(255,255,255,0.03)
+      );
+      border-radius: 28px;
+      padding: 24px;
+      transition: all 0.25s ease;
+      min-width: 0;
+    }
+
     .card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(212,175,55,0.25);
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,0.08),
-    rgba(255,255,255,0.04)
-  );
-}
+      transform: translateY(-6px);
+      border-color: rgba(212,175,55,0.25);
+      background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.08),
+        rgba(255,255,255,0.04)
+      );
+    }
+
     .card-kicker {
-  font-size: 12px;
-  color: rgba(212,175,55,0.7);
-  letter-spacing: 0.08em;
-}
+      font-size: 12px;
+      color: rgba(212,175,55,0.7);
+      letter-spacing: 0.08em;
+    }
+
     .card h3 {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
     .card p {
       margin: 14px 0 0;
       color: rgba(255,255,255,0.7);
       font-size: 14px;
     }
+
     .mini-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 16px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #e9cf85, #caa64b);
-  color: #111111;
-  font-size: 14px;
-  font-weight: 700;
-  box-shadow: 0 8px 20px rgba(202,166,75,0.22);
-  transition: all 0.2s ease;
-}
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 16px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #e9cf85, #caa64b);
+      color: #111111;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(202,166,75,0.22);
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
     .mini-btn:hover {
-  opacity: 0.92;
-  transform: translateY(-1px);
-}
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
     .faq-list {
       display: grid;
       gap: 16px;
       margin-top: 36px;
     }
+
     .faq-item {
       border: 1px solid rgba(255,255,255,0.1);
       background: rgba(255,255,255,0.04);
       border-radius: 26px;
       padding: 24px;
+      min-width: 0;
     }
+
     .faq-q {
       font-size: 20px;
       font-weight: 700;
+      line-height: 1.4;
     }
+
     .faq-a {
       margin-top: 10px;
       color: rgba(255,255,255,0.7);
       font-size: 15px;
     }
+
     .contact-box {
       border: 1px solid rgba(255,255,255,0.1);
       background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
       border-radius: 34px;
       padding: 36px;
+      min-width: 0;
     }
+
     .footer {
       padding: 28px 0 40px;
       color: rgba(255,255,255,0.45);
       font-size: 13px;
     }
+
+    .country-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .logo img {
+      height: 72px;
+      width: auto;
+      display: block;
+      filter: brightness(1.05);
+    }
+
+    @media (max-width: 1024px) {
+      .section {
+        padding: 76px 0;
+      }
+
+      .hero-grid {
+        gap: 30px;
+      }
+
+      .cards-3 {
+        gap: 18px;
+      }
+    }
+
     @media (max-width: 900px) {
       .hero-grid,
       .cards-3 {
         grid-template-columns: 1fr;
       }
-      h1 { font-size: 40px; }
-      h2 { font-size: 32px; }
-      .section { padding: 70px 0; }
-      .header-inner { align-items: flex-start; flex-direction: column; }
-      .nav { gap: 14px; }
+
+      .section {
+        padding: 68px 0;
+      }
+
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        gap: 12px 14px;
+        font-size: 13px;
+      }
+
+      .logo img {
+        height: 56px;
+      }
+
+      .panel,
+      .contact-box {
+        padding: 26px;
+      }
+
+      .faq-q {
+        font-size: 18px;
+      }
     }
-    @media (max-width: 520px) {
-      .container { width: min(1120px, calc(100% - 28px)); }
-      h1 { font-size: 34px; }
-      .hero-text, .section-text { font-size: 15px; }
-      .btn { width: 100%; }
-      .contact-box, .panel, .card, .faq-item { padding: 20px; }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(1120px, calc(100% - 28px));
+      }
+
+      .section {
+        padding: 56px 0;
+      }
+
+      .button-row {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .mini-btn {
+        width: 100%;
+      }
+
+      .contact-box,
+      .panel,
+      .card,
+      .faq-item {
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      .hero-text,
+      .section-text {
+        font-size: 15px;
+      }
+
+      .logo img {
+        height: 48px;
+      }
     }
-    .country-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 20px;
-  margin-bottom: 18px;
-  display: block;
-}
-    
-    .logo img {
-  height: 120px;
-  width: auto;
-  display: block;
-  filter: brightness(1.05);
-}
+
+    @media (max-width: 420px) {
+      .container {
+        width: min(1120px, calc(100% - 22px));
+      }
+
+      .header-inner {
+        padding: 12px 0;
+        gap: 14px;
+      }
+
+      .nav {
+        gap: 10px 12px;
+        font-size: 12px;
+      }
+
+      .btn {
+        padding: 13px 16px;
+        font-size: 14px;
+        min-height: 48px;
+      }
+
+      .faq-q {
+        font-size: 17px;
+      }
+
+      .faq-a,
+      .card p {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
   <header class="header">
     <div class="container header-inner">
       <a href="/" class="logo">
-  <img src="/logo.png" alt="SAFEKOREA" />
-</a>
+        <img src="/logo.png" alt="SAFEKOREA" />
+      </a>
       <nav class="nav">
         <a href="/about.html">소개</a>
         <a href="#countries">국가안내</a>
@@ -307,7 +470,6 @@
   <section class="section">
     <div class="container hero-grid">
       <div>
-        
         <h1>
           글로벌 투자시민권,<br>
           더 신중하고 전략적으로<br>
@@ -325,23 +487,23 @@
       </div>
 
       <div class="panel">
-  <div class="panel-title">Private Advisory</div>
-  <div style="font-size:32px; font-weight:700; line-height:1.25; letter-spacing:-0.03em; margin-bottom:14px;">
-    Global CBI<br>Strategy
-  </div>
-  <div style="color:rgba(255,255,255,0.72); font-size:15px; line-height:1.8; margin-bottom:22px;">
-    국가별 투자 구조, 가족 포함 범위, 심사 기준을 목적에 맞게 비교해
-    더 신중한 선택을 돕습니다.
-  </div>
-  <div class="check-list">
-    <div class="check-item">국가별 조건 비교</div>
-    <div class="check-item">가족 포함 범위 검토</div>
-    <div class="check-item">맞춤형 진행 방향 안내</div>
-  </div>
-</div>
+        <div class="panel-title">Private Advisory</div>
+        <div style="font-size:32px; font-weight:700; line-height:1.25; letter-spacing:-0.03em; margin-bottom:14px;">
+          Global CBI<br>Strategy
+        </div>
+        <div style="color:rgba(255,255,255,0.72); font-size:15px; line-height:1.8; margin-bottom:22px;">
+          국가별 투자 구조, 가족 포함 범위, 심사 기준을 목적에 맞게 비교해
+          더 신중한 선택을 돕습니다.
+        </div>
+        <div class="check-list">
+          <div class="check-item">국가별 조건 비교</div>
+          <div class="check-item">가족 포함 범위 검토</div>
+          <div class="check-item">맞춤형 진행 방향 안내</div>
+        </div>
       </div>
     </div>
   </section>
+
   <section id="countries" class="section">
     <div class="container">
       <div class="eyebrow">Countries</div>
@@ -350,65 +512,65 @@
 
       <div class="cards-3">
         <div class="card">
-  <img src="/tk.png" alt="터키" class="country-image" />
-  <h3>터키</h3>
-  <p>오랜 운영 이력을 가진 대표적인 투자시민권 프로그램</p>
-  <a class="mini-btn" href="/contact-qr.html">문의하기</a>
-</div>
+          <img src="/tk.png" alt="터키" class="country-image" />
+          <h3>터키</h3>
+          <p>오랜 운영 이력을 가진 대표적인 투자시민권 프로그램</p>
+          <a class="mini-btn" href="/contact-qr.html">문의하기</a>
+        </div>
+
         <div class="card">
-  <img src="/vanuatu.jpg" alt="바누아투" class="country-image" />
-  <h3>바누아투</h3>
-  <p>비교적 합리적인 진입 비용과 간결한 심사 구조</p>
-  <a class="mini-btn" href="/contact-qr.html">문의하기</a>
-</div>
+          <img src="/vanuatu.jpg" alt="바누아투" class="country-image" />
+          <h3>바누아투</h3>
+          <p>비교적 합리적인 진입 비용과 간결한 심사 구조</p>
+          <a class="mini-btn" href="/contact-qr.html">문의하기</a>
+        </div>
+
         <div class="card">
-  <img src="/grenada.jpg" alt="그레나다" class="country-image" />
-  <h3>그레나다</h3>
-  <p>특정 국가와의 연계 활용도가 높은 프로그램으로 주목</p>
-  <a class="mini-btn" href="/contact-qr.html">문의하기</a>
-</div>
+          <img src="/grenada.jpg" alt="그레나다" class="country-image" />
+          <h3>그레나다</h3>
+          <p>특정 국가와의 연계 활용도가 높은 프로그램으로 주목</p>
+          <a class="mini-btn" href="/contact-qr.html">문의하기</a>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="reviews" class="section">
-  <div class="container">
-    <div class="eyebrow">Reviews</div>
-    <h2>상담 후기</h2>
+    <div class="container">
+      <div class="eyebrow">Reviews</div>
+      <h2>상담 후기</h2>
 
-    <div class="cards-3">
+      <div class="cards-3">
+        <div class="card">
+          <p style="font-size:16px; line-height:1.8;">
+            “상담부터 국가 비교까지 체계적으로 정리되어 있어 이해가 훨씬 쉬웠습니다.
+            단순 안내가 아니라 방향을 잡아주는 느낌이었습니다.”
+          </p>
+          <div style="margin-top:16px; color:rgba(255,255,255,0.5); font-size:13px;">
+            J.M / 투자자
+          </div>
+        </div>
 
-      <div class="card">
-        <p style="font-size:16px; line-height:1.8;">
-          “상담부터 국가 비교까지 체계적으로 정리되어 있어 이해가 훨씬 쉬웠습니다.
-          단순 안내가 아니라 방향을 잡아주는 느낌이었습니다.”
-        </p>
-        <div style="margin-top:16px; color:rgba(255,255,255,0.5); font-size:13px;">
-          J.M / 투자자
+        <div class="card">
+          <p style="font-size:16px; line-height:1.8;">
+            “복잡했던 절차를 단계별로 설명받아 진행 방향을 잡는 데 큰 도움이 됐습니다.”
+          </p>
+          <div style="margin-top:16px; color:rgba(255,255,255,0.5); font-size:13px;">
+            K.H / 사업가
+          </div>
+        </div>
+
+        <div class="card">
+          <p style="font-size:16px; line-height:1.8;">
+            “국가별 차이와 비용 구조를 현실적으로 안내받아 신뢰가 갔습니다.”
+          </p>
+          <div style="margin-top:16px; color:rgba(255,255,255,0.5); font-size:13px;">
+            S.L / 자산가
+          </div>
         </div>
       </div>
-
-      <div class="card">
-        <p style="font-size:16px; line-height:1.8;">
-          “복잡했던 절차를 단계별로 설명받아 진행 방향을 잡는 데 큰 도움이 됐습니다.”
-        </p>
-        <div style="margin-top:16px; color:rgba(255,255,255,0.5); font-size:13px;">
-          K.H / 사업가
-        </div>
-      </div>
-
-      <div class="card">
-        <p style="font-size:16px; line-height:1.8;">
-          “국가별 차이와 비용 구조를 현실적으로 안내받아 신뢰가 갔습니다.”
-        </p>
-        <div style="margin-top:16px; color:rgba(255,255,255,0.5); font-size:13px;">
-          S.L / 자산가
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
   <section id="faq" class="section">
     <div class="container">
@@ -419,10 +581,12 @@
           <div class="faq-q">투자시민권은 어떤 분들에게 적합한가요?</div>
           <div class="faq-a">자산 관리, 이동 편의성, 가족 포함 여부, 국가별 제도 차이를 종합적으로 검토하려는 분들에게 적합합니다.</div>
         </div>
+
         <div class="faq-item">
           <div class="faq-q">국가마다 비용과 심사 기간이 다른가요?</div>
           <div class="faq-a">네. 기부형, 부동산형 등 방식에 따라 비용 구조가 다르고, 심사 기간과 요구 서류도 국가별로 차이가 있습니다.</div>
         </div>
+
         <div class="faq-item">
           <div class="faq-q">상담 전에 준비해야 할 것이 있나요?</div>
           <div class="faq-a">예산 범위, 가족 포함 여부, 선호 국가, 원하는 진행 속도 정도만 정리해두셔도 상담 효율이 높아집니다.</div>

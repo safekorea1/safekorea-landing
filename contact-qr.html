@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>문의 QR 안내</title>
+  <meta name="description" content="텔레그램 및 위챗 QR 문의 안내 페이지" />
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
+      background: #050505;
+      color: #fff;
+    }
+    a { text-decoration: none; color: inherit; }
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 80px;
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 0 24px;
+    }
+    .brand {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .back {
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 14px;
+      color: rgba(255,255,255,0.9);
+      font-size: 14px;
+    }
+    .hero {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border-radius: 28px;
+      padding: 40px 28px;
+      margin-bottom: 28px;
+    }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 46px;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+    .sub {
+      margin-top: 16px;
+      color: rgba(255,255,255,0.72);
+      font-size: 17px;
+      max-width: 760px;
+      line-height: 1.7;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .card {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      border-radius: 28px;
+      padding: 28px;
+    }
+    .label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+    }
+    .title {
+      margin-top: 10px;
+      font-size: 30px;
+      font-weight: 700;
+    }
+    .desc {
+      margin-top: 12px;
+      color: rgba(255,255,255,0.72);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .qr-box {
+      margin-top: 22px;
+      border-radius: 24px;
+      background: #fff;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 320px;
+    }
+    .qr-box img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+    }
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border-radius: 16px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .btn-primary {
+      background: #fff;
+      color: #111;
+    }
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #fff;
+      background: transparent;
+    }
+    .note {
+      margin-top: 28px;
+      color: rgba(255,255,255,0.52);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 34px; }
+      .title { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand"> 글로벌 투자시민권(CBI) 정보채널</div>
+      <a class="back" href="/">메인으로 돌아가기</a>
+    </div>
+
+    <section class="hero">
+      <div class="eyebrow">Contact QR</div>
+      <h1>원하시는 채널로<br>QR 스캔 후 바로 문의하세요</h1>
+      <div class="sub">
+        텔레그램 또는 위챗 중 편한 채널을 선택해 문의하실 수 있습니다.
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card" id="telegram">
+        <div class="label">Telegram</div>
+        <div class="title">텔레그램 문의</div>
+        <div class="desc">아래 QR 이미지를 스캔하거나 버튼을 눌러 텔레그램 문의 채널로 이동하세요.</div>
+        <div class="qr-box">
+          <img src="/telegram-qr.jpg" alt="텔레그램 QR 코드" />
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="https://t.me/safekorea1" target="_blank" rel="noopener noreferrer">텔레그램 바로가기</a>
+        </div>
+      </div>
+
+      <div class="card" id="wechat">
+        <div class="label">WeChat</div>
+        <div class="title">위챗 문의</div>
+        <div class="desc">아래 QR 이미지를 스캔한 뒤 위챗에서 친구 추가 후 문의하세요.</div>
+        <div class="qr-box">
+          <img src="/wechat-qr.jpg" alt="위챗 QR 코드" />
+        </div>
+      </div>
+    </section>
+
+    <div class="note">
+      
+    </div>
+  </div>
+</body>
+</html>

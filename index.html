@@ -206,14 +206,20 @@
       font-size: 14px;
     }
     .mini-btn {
-      display: inline-block;
-      margin-top: 18px;
-      padding: 10px 14px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.14);
-      font-size: 14px;
-      color: rgba(255,255,255,0.92);
-    }
+  display: inline-block;
+  margin-top: 18px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(212,175,55,0.35);
+  font-size: 14px;
+  color: #f3dfaa;
+  background: rgba(212,175,55,0.05);
+  transition: all 0.2s ease;
+}
+    .mini-btn:hover {
+  background: rgba(212,175,55,0.10);
+  transform: translateY(-1px);
+}
     .faq-list {
       display: grid;
       gap: 16px;
@@ -263,6 +269,14 @@
       .btn { width: 100%; }
       .contact-box, .panel, .card, .faq-item { padding: 20px; }
     }
+    .country-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 18px;
+  display: block;
+}
   </style>
 </head>
 <body>
@@ -341,20 +355,23 @@
 
       <div class="cards-3">
         <div class="card">
-          <h3>세인트키츠네비스</h3>
-          <p>오랜 운영 이력을 가진 대표적인 투자시민권 프로그램</p>
-          <a class="mini-btn" href="/contact-qr.html">문의하기</a>
-        </div>
+  <img src="/stkitts.jpg" alt="세인트키츠네비스" class="country-image" />
+  <h3>세인트키츠네비스</h3>
+  <p>오랜 운영 이력을 가진 대표적인 투자시민권 프로그램</p>
+  <a class="mini-btn" href="/contact-qr.html">문의하기</a>
+</div>
         <div class="card">
-          <h3>바누아투</h3>
-          <p>비교적 합리적인 진입 비용과 간결한 심사 구조</p>
-          <a class="mini-btn" href="/contact-qr.html">문의하기</a>
-        </div>
+  <img src="/vanuatu.jpg" alt="바누아투" class="country-image" />
+  <h3>바누아투</h3>
+  <p>비교적 합리적인 진입 비용과 간결한 심사 구조</p>
+  <a class="mini-btn" href="/contact-qr.html">문의하기</a>
+</div>
         <div class="card">
-          <h3>그레나다</h3>
-          <p>특정 국가와의 연계 활용도가 높은 프로그램으로 주목</p>
-          <a class="mini-btn" href="/contact-qr.html">문의하기</a>
-        </div>
+  <img src="/grenada.jpg" alt="그레나다" class="country-image" />
+  <h3>그레나다</h3>
+  <p>특정 국가와의 연계 활용도가 높은 프로그램으로 주목</p>
+  <a class="mini-btn" href="/contact-qr.html">문의하기</a>
+</div>
       </div>
     </div>
   </section>

@@ -131,14 +131,15 @@
       gap: 12px;
     }
     .check-item {
-  border: 1px solid var(--gold-line);
-  background: rgba(212,175,55,0.05);
+  border: 1px solid rgba(212,175,55,0.35); /* 금색 라인 */
+  background: #0a0a0a; /* panel이랑 동일하게 */
   border-radius: 18px;
   padding: 15px 16px;
+  transition: all 0.2s ease;
 }
     .check-item:hover {
-  border-color: rgba(212,175,55,0.65);
-  background: rgba(212,175,55,0.08);
+  border-color: rgba(212,175,55,0.7);
+  background: #0a0a0a; /* 그대로 유지 (색 안 바뀜) */
 }
     .eyebrow {
       font-size: 12px;

@@ -241,17 +241,21 @@
   }
 
   .check-item {
-    border: 1px solid rgba(212,175,55,0.35);
-    background: rgba(10, 10, 10, 0.82);
-    border-radius: 18px;
-    padding: 15px 16px;
-    transition: all 0.2s ease;
-  }
+  border: none;
+  background: linear-gradient(135deg, #e9cf85, #caa64b); /* 버튼 색 */
+  color: #111111;
+
+  border-radius: 18px;
+  padding: 15px 16px;
+  transition: all 0.2s ease;
+  font-weight: 700;
+  text-align: center;
+}
 
   .check-item:hover {
-    border-color: rgba(212,175,55,0.7);
-    background: rgba(10, 10, 10, 0.9);
-  }
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(202,166,75,0.25);
+}
 
   .eyebrow {
     font-size: 12px;
